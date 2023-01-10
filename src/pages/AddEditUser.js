@@ -47,7 +47,6 @@ const AddEditUser = () => {
   const onInputChange = (e) => {
     let { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
-    console.log(name, value);
   };
 
   useEffect(() => {
