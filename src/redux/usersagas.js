@@ -30,7 +30,7 @@ import {
 function* onLoadUsersStartAsync() {
   try {
     const response = yield call(loadUsersApi);
-    if (response.status === 200) {
+    if (response.status === 201) {
       yield delay(500);
       yield put(loadUsersSuccess(response?.data));
     }
