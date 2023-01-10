@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Home = () => {
-  const { users } = useSelector((state) => state.data);
+  const { users, loading } = useSelector((state) => state.data);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadUsersStart());
@@ -26,6 +26,25 @@ const Home = () => {
       toast.success("User Deleted Sccessfully");
     }
   };
+
+  if (loading) {
+    return (
+      <div>
+        <MDBSpinner
+          style={{
+            margin: "auto",
+            marginTop: "150px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          role="status"
+        >
+          <span className="visually-hidden">Loading...</span>
+        </MDBSpinner>
+      </div>
+    );
+  }
   return (
     <div className="container" style={{ marginTop: "150px" }}>
       <MDBTable>
