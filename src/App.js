@@ -5,11 +5,14 @@ import AddEditUser from "./pages/AddEditUser";
 import UserInfo from "./pages/UserInfo";
 import About from "./pages/About";
 import Header from "./components/Header";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <BrowserRouter>
       <div>
+        <ToastContainer />
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />
