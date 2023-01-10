@@ -55,6 +55,9 @@ const AddEditUser = () => {
       setEditMode(true);
       let singleUser = users?.find((item) => item?.id === Number(id));
       setFormValue({ ...singleUser });
+    } else {
+      setEditMode(false);
+      setFormValue({ ...initialState });
     }
   }, [id]);
   return (
